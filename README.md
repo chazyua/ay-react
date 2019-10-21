@@ -1,3 +1,12 @@
+# [artem-yerep.com](http://www.artem-yerep.com)
+## or [ay-react.chaze.net](http://www.ay-react.chaze.net) while in work
+
+Switching my Portfolio page (artem-yerep.com) to ReactJS with selectionsof views for Clients or a Recruiters
+
+![](http://artem-yerep.com/static/img/ayreact.png)
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

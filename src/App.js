@@ -1,26 +1,45 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Selection from './components/Selection';
+import Recruiter from './components/Recruiter';
+import Client from './components/Client';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    visible: true,
+    whichComponentToShow: "Selection"
+  }
+  render(){
+    if (this.state.whichComponentToShow === "Selection") {
+      return (
+        <div className="App">
+              <Selection />
+              <div className="row home-content__main">
+                <h3>Who are you ?</h3>
+                <div class="home-content__buttons">
+                  <button onClick={() => {this.setState({whichComponentToShow : "Recruiter"});}} className="btn btn--stroke">
+                      Recruiter</button><br />
+                  <button onClick={() => {this.setState({whichComponentToShow : "Client"});}}  className="btn btn--stroke">
+                      Client</button>
+                </div>
+              </div>
+        </div>
+      );
+    } else if (this.state.whichComponentToShow === "Recruiter") {
+      return(
+        <div className='App'>
+        <Recruiter />
+        </div>
+      )
+    } else if (this.state.whichComponentToShow === "Client") {
+      return(
+        <div className='App'>
+        <Client />
+        </div>
+      )
+    } 
+
+}
 }
 
 export default App;
